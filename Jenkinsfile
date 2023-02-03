@@ -9,10 +9,11 @@ pipeline{
             git branch: 'main', url: 'https://github.com/Ablayekandji/RESTAPI_springboot.git'
             }
         }
-        stage("Maven Build"){
-            steps{
-                bat 'mvn install'
+        stages {
+            stage ('Build') {
+                steps {
+                bat 'mvn clean package'
+                }
             }
         }
-    }
 }
